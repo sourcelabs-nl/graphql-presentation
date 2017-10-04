@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
                             .name("id")
                             .type(Scalars.GraphQLInt)
                     )
-                    .dataFetcher(OrderDataFetcher())
+                    .dataFetcher(OrderDataFetcher()) // This defines how the data is fetched for field orderById
             )
             .build()
     // Create the executable schema

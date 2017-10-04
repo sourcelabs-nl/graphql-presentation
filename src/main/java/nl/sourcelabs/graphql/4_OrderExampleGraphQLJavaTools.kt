@@ -7,7 +7,7 @@ import graphql.schema.GraphQLSchema
 import nl.sourcelabs.graphql.OrderRepository
 
 // Define a GraphQL Java Tools QueryResolver
-class OrderResolver : GraphQLQueryResolver {
+class QueryResolver : GraphQLQueryResolver {
     fun getOrderById(id: Int) = OrderRepository.getOrderById(id)
 }
 
@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
     // Create the executable schema
     val graphQLSchema: GraphQLSchema = SchemaParser.newParser()
             .schemaString(schema)
-            .resolvers(OrderResolver())
+            .resolvers(QueryResolver()) // This defines how data is fetched
             .build()
             .makeExecutableSchema()
     // Build GraphQL

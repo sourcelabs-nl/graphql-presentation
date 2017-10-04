@@ -16,7 +16,7 @@ object OrderService {
 fun main(args: Array<String>) {
     // Create the executable schema
     val graphQLSchema = GraphQLSchemaGenerator()
-            .withOperationsFromSingleton(OrderService)
+            .withOperationsFromSingleton(OrderService) // Registers the code containing relevant annotations
             .generate()
     // Build GraphQL
     val graphQL = GraphQL.newGraphQL(graphQLSchema).build()
