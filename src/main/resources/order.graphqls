@@ -1,0 +1,16 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    orderById(id: Int): Order
+}
+
+type Order {
+    totalPrice: String
+}
+
+type Mutation {
+
+}
