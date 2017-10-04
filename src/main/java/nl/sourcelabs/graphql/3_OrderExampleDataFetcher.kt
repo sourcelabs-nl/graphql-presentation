@@ -1,4 +1,4 @@
-package nl.sourcelabs.graphql.datafetcher
+package nl.sourcelabs.graphql
 
 import graphql.GraphQL
 import graphql.Scalars

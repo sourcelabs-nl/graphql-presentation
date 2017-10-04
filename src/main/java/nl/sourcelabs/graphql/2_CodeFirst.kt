@@ -1,4 +1,4 @@
-package nl.sourcelabs.graphql.schema
+package nl.sourcelabs.graphql
 
 import graphql.GraphQL
 import graphql.Scalars.GraphQLString
