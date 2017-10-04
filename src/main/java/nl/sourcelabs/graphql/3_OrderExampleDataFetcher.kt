@@ -5,16 +5,13 @@ import graphql.Scalars
 import graphql.schema.*
 import graphql.schema.GraphQLArgument.newArgument
 
-data class Order(val totalPrice: String)
-
+// Define a plain GraphQL Java DataFetcher
 class OrderDataFetcher : DataFetcher<Order> {
-    override fun get(env: DataFetchingEnvironment) = when (env.arguments["id"]) {
-        123 -> Order("19.99")
-        else -> null
-    }
+    override fun get(env: DataFetchingEnvironment) = OrderRepository.getOrderById(env.arguments["id"] as Int)
 }
 
 fun main(args: Array<String>) {
+    // Construct a schema from code
     val orderType = GraphQLObjectType.newObject()
             .name("Order")
             .field(GraphQLFieldDefinition.newFieldDefinition()
@@ -22,7 +19,6 @@ fun main(args: Array<String>) {
                     .type(Scalars.GraphQLString)
             )
             .build()
-
     val queryType = GraphQLObjectType.newObject()
             .name("Query")
             .field(GraphQLFieldDefinition.newFieldDefinition()
@@ -35,10 +31,11 @@ fun main(args: Array<String>) {
                     .dataFetcher(OrderDataFetcher())
             )
             .build()
-
+    // Create the executable schema
     val graphQLSchema: GraphQLSchema = GraphQLSchema.newSchema().query(queryType).build()
+    // Build GraphQL
     val graphQL = GraphQL.newGraphQL(graphQLSchema).build()
+    // Execute a query
     val executionResult = graphQL.execute("{ orderById(id: 123) { totalPrice } }")
-
     println(executionResult.getData<Any>())
 }
