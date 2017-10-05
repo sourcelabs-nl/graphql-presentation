@@ -3,14 +3,13 @@ package nl.sourcelabs.graphql
 import graphql.GraphQL
 import graphql.Scalars
 import graphql.schema.*
-import graphql.schema.GraphQLArgument.newArgument
 
-// graphql-java DataFetcher example
-class OrderExampleDataFetcher {
+// graphql-java DataFetcher example with Exception in DataFetcher, see: SimpleDataFetcherExceptionHandler
+class OrderExampleDataFetcherException {
 
     // Define a plain GraphQL Java DataFetcher
     class OrderDataFetcher : DataFetcher<Order> {
-        override fun get(env: DataFetchingEnvironment) = OrderRepository.getOrderById(env.arguments["id"] as Int)
+        override fun get(env: DataFetchingEnvironment): Order = throw RuntimeException("something is really wrong here!")
     }
 
     companion object {
@@ -29,7 +28,7 @@ class OrderExampleDataFetcher {
                     .field(GraphQLFieldDefinition.newFieldDefinition()
                             .name("orderById")
                             .type(orderType)
-                            .argument(newArgument()
+                            .argument(GraphQLArgument.newArgument()
                                     .name("id")
                                     .type(Scalars.GraphQLInt)
                             )

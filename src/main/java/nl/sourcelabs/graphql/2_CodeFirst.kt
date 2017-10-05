@@ -24,5 +24,5 @@ fun main(args: Array<String>) {
     val graphQL = GraphQL.newGraphQL(graphQLSchema).build()
     // Execute a query
     val executionResult = graphQL.execute("{ hello }")
-    println(executionResult.getData<Any>())
+    println(executionResult.toSpecification())
 }
