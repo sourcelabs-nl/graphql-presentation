@@ -1,6 +1,5 @@
 schema {
     query: Query
-    mutation: Mutation
 }
 
 type Query {
@@ -11,6 +10,4 @@ type Order {
     totalPrice: String
 }
 
-type Mutation {
 
-}

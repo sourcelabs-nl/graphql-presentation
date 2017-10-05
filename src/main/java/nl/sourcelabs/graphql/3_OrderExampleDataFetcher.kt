@@ -10,6 +10,7 @@ class OrderDataFetcher : DataFetcher<Order> {
     override fun get(env: DataFetchingEnvironment) = OrderRepository.getOrderById(env.arguments["id"] as Int)
 }
 
+// graphql-java DataFetcher example
 fun main(args: Array<String>) {
     // Construct a schema from code
     val orderType = GraphQLObjectType.newObject()

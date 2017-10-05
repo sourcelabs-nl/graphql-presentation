@@ -8,7 +8,7 @@ import nl.sourcelabs.graphql.OrderRepository
 
 // Define a GraphQL Java Tools QueryResolver
 class QueryResolver : GraphQLQueryResolver {
-    fun getOrderById(id: Int) = OrderRepository.getOrderById(id)
+    fun orderById(id: Int) = OrderRepository.getOrderById(id)
 }
 
 // Schema first with GraphQL Java Tools
