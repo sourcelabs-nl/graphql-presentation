@@ -1,10 +1,19 @@
 package nl.sourcelabs.graphql
 
-data class Order(val totalPrice: String)
+import java.util.concurrent.atomic.AtomicInteger
+
+data class Order(val id: Int? = null, val totalPrice: String)
 
 object OrderRepository {
-    fun getOrderById(id: Int) = when (id) {
-        123 -> Order("19.99")
-        else -> null
+
+    private val orderMap = mutableMapOf(123 to Order(123, "19.99"))
+    private val orderIdGenerator = AtomicInteger(200)
+
+    fun getOrderById(id: Int) = orderMap[id]
+
+    fun addOrder(newOrder: Order): Order {
+        val copy = newOrder.copy(id = orderIdGenerator.incrementAndGet())
+        orderMap.put(copy.id!!, copy)
+        return copy
     }
 }
