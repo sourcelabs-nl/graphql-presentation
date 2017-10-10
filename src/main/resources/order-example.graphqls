@@ -1,13 +1,31 @@
 schema {
     query: Query
+    mutation: Mutation
 }
 
 type Query {
-    orderById(id: Int): Order
+    order(id: Long): Order
+}
+
+type Mutation {
+    createOrder(order: Order)
 }
 
 type Order {
-    totalPrice: String
+    totalPrice: String,
+    orderItems: [OrderItem]
 }
 
+type OrderItem {
+    product: Product,
+    shipment: Shipment
+}
+
+type Product {
+    imageUrl: String
+}
+
+type Shipment {
+    status: String
+}
 

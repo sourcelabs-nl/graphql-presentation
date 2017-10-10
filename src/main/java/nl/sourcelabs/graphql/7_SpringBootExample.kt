@@ -12,7 +12,7 @@ open class SpringBootExample {
     // We need to register at least 1 bean of type GraphQLResolver
     @Bean
     open fun queryResolver() = object : GraphQLQueryResolver {
-        fun orderById(id: Int): Order? = OrderRepository.getOrderById(id)
+        fun order(id: Long): Order? = OrderRepository.getOrderById(id)
     }
 
     companion object {

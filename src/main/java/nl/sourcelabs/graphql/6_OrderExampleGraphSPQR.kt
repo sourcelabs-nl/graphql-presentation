@@ -9,7 +9,7 @@ import io.leangen.graphql.annotations.GraphQLQuery
 object OrderService {
     // Bind Java to GraphQL SPQR in the code
     @GraphQLQuery(name = "orderById")
-    fun orderById(@GraphQLArgument(name = "id") id: Int) = OrderRepository.getOrderById(id)
+    fun orderById(@GraphQLArgument(name = "id") id: Long) = OrderRepository.getOrderById(id)
 }
 
 // Dynamic schema generation example with GraphQL SPQR

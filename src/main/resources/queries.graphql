@@ -1,0 +1,13 @@
+{
+    orderById(id: 4370307900) {
+        totalPrice
+        orderItems {
+            product {
+                imageUrl
+            }
+            shipment {
+                status
+            }
+        }
+    }
+}
