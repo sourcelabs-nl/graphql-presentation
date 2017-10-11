@@ -2,8 +2,7 @@ package nl.sourcelabs.graphql
 
 import graphql.GraphQL
 import graphql.schema.GraphQLSchema
-import graphql.schema.StaticDataFetcher
-import graphql.schema.idl.RuntimeWiring.newRuntimeWiring
+import graphql.schema.idl.RuntimeWiring
 import graphql.schema.idl.SchemaGenerator
 import graphql.schema.idl.SchemaParser
 
@@ -12,14 +11,20 @@ fun main(args: Array<String>) {
     // Define schema, just a string describing the types.
     val schema = """
         type Query {
-            hello: String
+            order(id: Long): Order
+        }
+        type Order {
+            totalPrice: String
         }
     """
     val typeDefinitionRegistry = SchemaParser().parse(schema)
     // Wire behaviour to the types
-    val runtimeWiring = newRuntimeWiring()
-            .type("Query", { builder -> builder.dataFetcher("hello", StaticDataFetcher("world")) })
-            .build()
+    val runtimeWiring = RuntimeWiring.newRuntimeWiring()
+            .type("Query", { builder ->
+                builder.dataFetcher("order", { env ->
+                    OrderRepository.getOrderById(env.arguments["id"] as Long)
+                })
+            }).build()
     // Make the schema executable
     val graphQLSchema: GraphQLSchema = SchemaGenerator().makeExecutableSchema(typeDefinitionRegistry, runtimeWiring)
     // Build GraphQL

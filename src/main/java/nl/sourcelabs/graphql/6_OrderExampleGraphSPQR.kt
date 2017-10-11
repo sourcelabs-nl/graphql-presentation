@@ -8,8 +8,8 @@ import io.leangen.graphql.annotations.GraphQLQuery
 // Define your plain services
 object OrderService {
     // Bind Java to GraphQL SPQR in the code
-    @GraphQLQuery(name = "orderById")
-    fun orderById(@GraphQLArgument(name = "id") id: Long) = OrderRepository.getOrderById(id)
+    @GraphQLQuery(name = "order")
+    fun order(@GraphQLArgument(name = "id") id: Long) = OrderRepository.getOrderById(id)
 }
 
 // Dynamic schema generation example with GraphQL SPQR
@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
     // Execute a query
     val executionResult = graphQL.execute("""
                 {
-                    orderById(id: 123) {
+                    order(id: 123) {
                         totalPrice
                     }
                 }

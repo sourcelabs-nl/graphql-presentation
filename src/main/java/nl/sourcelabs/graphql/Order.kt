@@ -9,7 +9,7 @@ data class Order(val id: Long? = null, val totalPrice: String, val orderItems: L
 
 object OrderRepository {
     
-    private val orderMap = mutableMapOf(4370307900L to Order(4370307900, "23.93", listOf(
+    private val orderMap = mutableMapOf(4370307900L to Order(4370307900L, "23.93", listOf(
             OrderItem(Shipment("verzonden"), Product("https://234.img")),
             OrderItem(Shipment("verzonden"), Product("https://345.img"))
     )))

@@ -42,7 +42,7 @@ class OrderExampleDataFetcherException {
             // Execute a query
             val executionResult = graphQL.execute("""
                 {
-                    orderById(id: 123) {
+                    order(id: 123) {
                         totalPrice
                     }
                 }

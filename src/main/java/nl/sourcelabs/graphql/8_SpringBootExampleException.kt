@@ -14,7 +14,7 @@ open class SpringBootExampleException {
     // We need to register at least 1 bean of type GraphQLResolver
     @Bean
     open fun queryResolver() = object : GraphQLQueryResolver {
-        fun orderById(id: Int): Order? = throw RuntimeException("something really wrong here")
+        fun order(id: Int): Order? = throw RuntimeException("something really wrong here")
     }
 
     // Graphql servlet filters all the DataFetching exception, during development this can be annoying. Expose al details bij overriding the default GraphQLErrorHandler

@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
     // Define the schema
     val schema = """
         type Query {
-            orderById(id: Int): Order
+            order(id: Int): Order
         }
         type Order {
             totalPrice: String
@@ -25,7 +25,9 @@ fun main(args: Array<String>) {
     // Create the executable schema
     val graphQLSchema: GraphQLSchema = SchemaParser.newParser()
             .schemaString(schema)
-            .resolvers(QueryResolver()) // This defines how data is fetched
+            .resolvers(object: GraphQLQueryResolver {
+                fun order(id: Long) = OrderRepository.getOrderById(id)
+            })
             .build()
             .makeExecutableSchema()
     // Build GraphQL
@@ -33,7 +35,7 @@ fun main(args: Array<String>) {
     // Execute a query
     val executionResult = graphQL.execute("""
                 {
-                    orderById(id: 123) {
+                    order(id: 123) {
                         totalPrice
                     }
                 }
