@@ -7,8 +7,11 @@ data class Shipment(val status: String)
 data class OrderItem(val shipment: Shipment, val product: Product)
 data class Order(val id: Long? = null, val totalPrice: String, val orderItems: List<OrderItem>? = null)
 
+data class OrderInput(val totalPrice: String, val orderItems: List<OrderItemInput>)
+data class OrderItemInput(val productId: Long)
+
 object OrderRepository {
-    
+
     private val orderMap = mutableMapOf(4370307900L to Order(4370307900L, "23.93", listOf(
             OrderItem(Shipment("verzonden"), Product("https://234.img")),
             OrderItem(Shipment("verzonden"), Product("https://345.img"))

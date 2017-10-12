@@ -1,19 +1,20 @@
 schema {
     query: Query
-   # mutation: Mutation
+    mutation: Mutation
 }
 
 type Query {
     order(id: Long): Order
 }
 
-#type Mutation {
-#    createOrder(order: Order)
-#}
+type Mutation {
+    createOrder(order: OrderInput): Order
+}
 
 type Order {
     totalPrice: String
     orderItems: [OrderItem]
+
 }
 
 type OrderItem {
@@ -29,4 +30,13 @@ type Shipment {
     status: String
 }
 
-
+type Mutation {
+    createOrder(order: OrderInput): Order
+}
+input OrderInput {
+    totalPrice: String
+    orderItems: [OrderItemInput]
+}
+input OrderItemInput {
+    productId: Long
+}

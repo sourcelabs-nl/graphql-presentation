@@ -1,5 +1,6 @@
 package nl.sourcelabs.graphql
 
+import com.coxautodev.graphql.tools.GraphQLMutationResolver
 import com.coxautodev.graphql.tools.GraphQLQueryResolver
 import graphql.GraphQLError
 import graphql.servlet.DefaultGraphQLErrorHandler
@@ -15,6 +16,11 @@ open class SpringBootExampleException {
     @Bean
     open fun queryResolver() = object : GraphQLQueryResolver {
         fun order(id: Long): Order? = throw RuntimeException("something really wrong here")
+    }
+
+    @Bean
+    open fun mutationResolver() = object : GraphQLMutationResolver {
+        fun createOrder(order: OrderInput): Order? = Order(totalPrice = order.totalPrice)
     }
 
     // Graphql servlet filters all the DataFetching exception, during development this can be annoying. Expose al details bij overriding the default GraphQLErrorHandler

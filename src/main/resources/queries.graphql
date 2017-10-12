@@ -13,3 +13,9 @@
 }
 
 
+mutation CreateOrder($order: OrderInput!) {
+    createOrder(order: $order) {
+        id
+        totalPrice
+    }
+}

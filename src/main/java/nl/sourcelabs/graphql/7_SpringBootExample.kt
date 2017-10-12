@@ -1,5 +1,6 @@
 package nl.sourcelabs.graphql
 
+import com.coxautodev.graphql.tools.GraphQLMutationResolver
 import com.coxautodev.graphql.tools.GraphQLQueryResolver
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -13,6 +14,11 @@ open class SpringBootExample {
     @Bean
     open fun queryResolver() = object : GraphQLQueryResolver {
         fun order(id: Long): Order? = OrderRepository.getOrderById(id)
+    }
+
+    @Bean
+    open fun mutationResolver() = object : GraphQLMutationResolver {
+        fun createOrder(order: OrderInput): Order? = Order(totalPrice = order.totalPrice)
     }
 
     companion object {
