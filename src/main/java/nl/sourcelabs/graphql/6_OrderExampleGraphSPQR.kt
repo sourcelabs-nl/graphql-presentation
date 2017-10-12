@@ -12,6 +12,10 @@ object OrderService {
     fun order(@GraphQLArgument(name = "id") id: Long) = OrderRepository.getOrderById(id)
 }
 
+val graphQLSchema = GraphQLSchemaGenerator()
+        .withOperationsFromSingleton(OrderService) // Registers the code containing relevant annotations
+        .generate()
+
 // Dynamic schema generation example with GraphQL SPQR
 fun main(args: Array<String>) {
     // Create the executable schema

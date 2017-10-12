@@ -1,0 +1,14 @@
+{
+  "data": {
+    "order": null
+  },
+  "errors": [
+    {
+      "message": "Exception while fetching data (/order) : something really wrong here",
+      "path": ["order"],
+      "exception": {},
+      "extensions": null,
+      "errorType": "DataFetchingException"
+    }
+  ]
+}

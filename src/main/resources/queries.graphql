@@ -1,5 +1,5 @@
 {
-    orderById(id: 4370307900) {
+    order(id: 4370307900) {
         totalPrice
         orderItems {
             product {
@@ -11,3 +11,5 @@
         }
     }
 }
+
+

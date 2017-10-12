@@ -1,5 +1,6 @@
 package nl.sourcelabs.graphql
 
+import graphql.ExecutionResult
 import graphql.GraphQL
 import graphql.schema.GraphQLSchema
 import graphql.schema.idl.RuntimeWiring
@@ -28,8 +29,8 @@ fun main(args: Array<String>) {
     // Make the schema executable
     val graphQLSchema: GraphQLSchema = SchemaGenerator().makeExecutableSchema(typeDefinitionRegistry, runtimeWiring)
     // Build GraphQL
-    val graphQL = GraphQL.newGraphQL(graphQLSchema).build()
+    val graphQL: GraphQL = GraphQL.newGraphQL(graphQLSchema).build()
     // Execute a query
-    val executionResult = graphQL.execute("{ hello }")
+    val executionResult: ExecutionResult = graphQL.execute("{ hello }")
     println(executionResult.toSpecification())
 }
