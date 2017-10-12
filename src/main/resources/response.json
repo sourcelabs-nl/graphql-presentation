@@ -3,23 +3,11 @@
     "order": {
       "totalPrice": "23.93",
       "orderItems": [
-        {
-          "product": {
-            "imageUrl": "https://234.img"
-          },
-          "shipment": {
-            "status": "verzonden"
-          }
-        },
-        {
-          "product": {
-            "imageUrl": "https://345.img"
-          },
-          "shipment": {
-            "status": "verzonden"
-          }
-        }
-      ]
+        { "product": { "imageUrl": "https://123.img" },
+          "shipment": { "status": "verzonden" } },
+        { "product": { "imageUrl": "https://234.img" },
+          "shipment": { "status": "verzonden" }
+        }]
     }
   }
 }
