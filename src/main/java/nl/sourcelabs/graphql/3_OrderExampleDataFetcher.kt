@@ -10,7 +10,10 @@ class OrderExampleDataFetcher {
 
     // Define a plain GraphQL Java DataFetcher
     class OrderDataFetcher : DataFetcher<Order> {
-        override fun get(env: DataFetchingEnvironment) = OrderRepository.getOrderById(env.arguments["id"] as Long)
+        override fun get(env: DataFetchingEnvironment): Order? {
+            val id = env.arguments["id"] as Long
+            return OrderRepository.getOrderById(id)
+        }
     }
 
     companion object {
