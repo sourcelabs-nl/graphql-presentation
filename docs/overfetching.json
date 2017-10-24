@@ -1,0 +1,245 @@
+{
+  "Product": {
+    "id": 9200000028132984,
+    "title": "Paint marker Edding 751-49 wit",
+    "description": "Lakmarker met ronde punt. Schrijfbreedte: 1 - 2 mm. Voor het schrijven en markeren op bijna alle materialen zoals glas plastic hout en metaal. Permanente reukarme hittebestendige en lakachtige dekkende inkt. Voor gebruik goed schudden en pompen.",
+    "secondaryProductType": "LAS",
+    "primaryProductType": "LAS",
+    "familyId": 9200000028132983,
+    "familyName": "Lakmarker",
+    "gpcBrickId": 10001235,
+    "gpcChunkId": 30015590,
+    "eans": 4004764017607,
+    "properties": {
+      "property": [
+        {
+          "propertyKey": "Searchable Status",
+          "propertyValues": {
+            "value": "Y"
+          }
+        },
+        {
+          "propertyKey": "Recommended Maximal Age",
+          "propertyValues": {
+            "unit": "Year",
+            "value": 99
+          }
+        },
+        {
+          "propertyKey": "Product Tag 1",
+          "propertyValues": {
+            "value": "Marker"
+          }
+        },
+        {
+          "propertyKey": "Ink Colour",
+          "propertyValues": {
+            "value": "Wit"
+          }
+        },
+        {
+          "propertyKey": "Delivery Method",
+          "propertyValues": {
+            "value": "Parcel"
+          }
+        },
+        {
+          "propertyKey": "Category Code",
+          "propertyValues": [
+            {
+              "value": "TYSC01"
+            },
+            {
+              "value": "TYHC00"
+            }
+          ]
+        },
+        {
+          "propertyKey": "Weight and Fallback for Drop Shipper",
+          "propertyValues": {
+            "value": 1000
+          }
+        },
+        {
+          "propertyKey": "Colour",
+          "propertyValues": {
+            "value": "Wit"
+          }
+        },
+        {
+          "propertyKey": "Type of Marker Pen",
+          "propertyValues": {
+            "value": "Permanentmarker"
+          }
+        },
+        {
+          "propertyKey": "Batteries Required",
+          "propertyValues": {
+            "value": "N"
+          }
+        },
+        {
+          "propertyKey": "Colour Group",
+          "propertyValues": {
+            "value": "Wit"
+          }
+        },
+        {
+          "propertyKey": "Distinctive Features",
+          "propertyValues": [
+            {
+              "value": "Dropdown Size"
+            },
+            {
+              "value": "Colour"
+            }
+          ]
+        },
+        {
+          "propertyKey": "Delivery Method Product Group Fallback",
+          "propertyValues": {
+            "value": "Parcel"
+          }
+        },
+        {
+          "propertyKey": "Number of Products in Package",
+          "propertyValues": {
+            "value": 1
+          }
+        },
+        {
+          "propertyKey": "Target Audience",
+          "propertyValues": {
+            "value": "Kinderen en volwassenen"
+          }
+        },
+        {
+          "propertyKey": "Modification Time",
+          "propertyValues": {
+            "value": "2017-07-05 09:04:55"
+          }
+        },
+        {
+          "propertyKey": "Appearance Name",
+          "propertyValues": {
+            "value": "Physical"
+          }
+        },
+        {
+          "propertyKey": "Recommended Minimal Age",
+          "propertyValues": {
+            "unit": "Year",
+            "value": 10
+          }
+        },
+        {
+          "propertyKey": "Language Content",
+          "propertyValues": {
+            "value": "nl"
+          }
+        }
+      ]
+    },
+    "parties": {
+      "party": {
+        "name": "Edding",
+        "partyId": 4095859,
+        "role": "BRAND",
+        "rank": 1,
+        "referenceType": "Brand"
+      }
+    },
+    "relatedProducts": {
+      "relatedProduct": [
+        {
+          "globalId": "20006#4004764017607",
+          "type": "",
+          "rank": 0,
+          "referenceType": "Product to Supplier Product"
+        },
+        {
+          "globalId": "161893#233121",
+          "type": "",
+          "rank": 0,
+          "referenceType": "Product to Supplier Product"
+        },
+        {
+          "globalId": "47580#4004764017607",
+          "type": "",
+          "rank": 0,
+          "referenceType": "Product to Supplier Product"
+        },
+        {
+          "globalId": "55774#4004764017607",
+          "type": "",
+          "rank": 0,
+          "referenceType": "Product to Supplier Product"
+        }
+      ]
+    },
+    "dateModified": "2017-08-29T16:25:26",
+    "publicationStatus": "Y",
+    "enrichmentStatus": 0,
+    "enrichmentMaxLevel": 3,
+    "dateCreated": "2014-05-15T13:27:16",
+    "assetBlock": {
+      "images": {
+        "groupList": {
+          "group": [
+            {
+              "usage": "Cover",
+              "size": "large",
+              "assetList": {
+                "asset": {
+                  "url": "imagebase3/large/FC/4/8/9/2/9200000028132984.jpg",
+                  "contentType": "image/jpg"
+                }
+              }
+            },
+            {
+              "usage": "Cover",
+              "size": "regular",
+              "assetList": {
+                "asset": {
+                  "url": "imagebase3/regular/FC/4/8/9/2/9200000028132984.jpg",
+                  "contentType": "image/jpg"
+                }
+              }
+            },
+            {
+              "usage": "Cover",
+              "size": "mini",
+              "assetList": {
+                "asset": {
+                  "url": "imagebase3/mini/FC/4/8/9/2/9200000028132984.jpg",
+                  "contentType": "image/jpg"
+                }
+              }
+            },
+            {
+              "usage": "Cover",
+              "size": "thumb",
+              "assetList": {
+                "asset": {
+                  "url": "imagebase3/thumb/FC/4/8/9/2/9200000028132984.jpg",
+                  "contentType": "image/jpg"
+                }
+              }
+            },
+            {
+              "usage": "Cover",
+              "size": "tout",
+              "assetList": {
+                "asset": {
+                  "url": "imagebase3/tout/FC/4/8/9/2/9200000028132984.jpg",
+                  "contentType": "image/jpg"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "exposeStatus": "EXPOSED"
+  }
+}

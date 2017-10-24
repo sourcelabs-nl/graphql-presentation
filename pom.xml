@@ -34,6 +34,11 @@
         </dependency>
         <dependency>
             <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-annotations</artifactId>
+            <version>${graphql-java-annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java-tools</artifactId>
             <version>${graphql-java-tools.version}</version>
         </dependency>

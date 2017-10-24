@@ -31,6 +31,12 @@ fun main(args: Array<String>) {
     // Build GraphQL
     val graphQL: GraphQL = GraphQL.newGraphQL(graphQLSchema).build()
     // Execute a query
-    val executionResult: ExecutionResult = graphQL.execute("{ hello }")
+    val executionResult: ExecutionResult = graphQL.execute("""
+                query {
+                    order(id: 4370307900) {
+                        totalPrice
+                    }
+                }
+                """)
     println(executionResult.toSpecification())
 }
