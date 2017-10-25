@@ -4,7 +4,7 @@ schema {
 }
 
 type Query {
-    order(id: Long): Order
+    order(id: Long!): Order
 }
 
 type Mutation {
@@ -12,8 +12,9 @@ type Mutation {
 }
 
 type Order {
-    totalPrice: String
-    orderItems: [OrderItem]
+    id: Long
+    totalPrice: String!
+    orderItems: [OrderItem]!
 
 }
 

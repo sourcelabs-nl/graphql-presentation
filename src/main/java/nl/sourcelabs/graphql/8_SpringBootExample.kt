@@ -29,7 +29,10 @@ open class SpringBootExample {
 
     @Bean
     open fun mutationResolver() = object : GraphQLMutationResolver {
-        fun createOrder(order: OrderInput): Order? = Order(totalPrice = order.totalPrice)
+        fun createOrder(order: OrderInput): Order? {
+            val newOrder = Order(totalPrice = order.totalPrice)
+            return OrderRepository.addOrder(newOrder)
+        }
     }
 
     companion object {

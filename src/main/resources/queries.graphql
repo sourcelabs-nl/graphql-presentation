@@ -19,3 +19,9 @@ mutation CreateOrder($order: OrderInput!) {
         totalPrice
     }
 }
+
+query GetOrderById($id: Long!) {
+    order(id: $id) {
+        totalPrice
+    }
+}

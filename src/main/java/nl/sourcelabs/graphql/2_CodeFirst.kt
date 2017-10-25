@@ -2,10 +2,7 @@ package nl.sourcelabs.graphql
 
 import graphql.GraphQL
 import graphql.Scalars
-import graphql.schema.GraphQLArgument
-import graphql.schema.GraphQLFieldDefinition
-import graphql.schema.GraphQLObjectType
-import graphql.schema.GraphQLSchema
+import graphql.schema.*
 
 // Code first example
 fun main(args: Array<String>) {
@@ -22,7 +19,7 @@ fun main(args: Array<String>) {
                     .name("order")
                     .argument(GraphQLArgument("id", Scalars.GraphQLLong))
                     .type(orderType)
-                    .dataFetcher { env -> OrderRepository.getOrderById(env.arguments["id"] as Long) }
+                    .dataFetcher { env: DataFetchingEnvironment -> OrderRepository.getOrderById(env.getArgument<Long>("id")) }
                     .build()
             ).build()
     // Create the executable schema

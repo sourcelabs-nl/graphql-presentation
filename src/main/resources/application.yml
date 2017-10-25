@@ -1,7 +1,5 @@
 spring:
   application.name: GraphQL
-  datasource:
-    initialize: false
 
 logging.level:
   org.springframework: info
@@ -9,10 +7,6 @@ logging.level:
 graphql:
   servlet:
     mapping: /graphql
-    enabled: true
-    corsEnabled: true
 
 graphiql:
     mapping: /graphiql
-
-max-query-depth: 10
