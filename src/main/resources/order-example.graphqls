@@ -4,15 +4,19 @@ schema {
 }
 
 type Query {
+    # Retrieve an order by order identifier
     order(id: Long!): Order
 }
 
 type Mutation {
+    # Submits a new order
     createOrder(order: OrderInput): Order
 }
 
 type Order {
+    # The identifier of the order
     id: Long
+    # Total price of the order that was placed
     totalPrice: String!
     orderItems: [OrderItem]!
 
