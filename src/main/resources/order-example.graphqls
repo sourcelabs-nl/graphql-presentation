@@ -4,6 +4,8 @@ schema {
 }
 
 type Query {
+    # Retrieve all the orders
+    orders: [Order]
     # Retrieve an order by order identifier
     order(id: Long!): Order
 }
@@ -17,31 +19,36 @@ type Order {
     # The identifier of the order
     id: Long
     # Total price of the order that was placed
-    totalPrice: String!
+    totalPrice: BigDecimal!
+    # Order consists of 1 or many lines. Each line represents a product that is bought by the customer
     orderItems: [OrderItem]!
 
 }
 
 type OrderItem {
-    product: Product
+    quantity: Int!
+    product: Product!
     shipment: Shipment
 }
 
 type Product {
+    id: String
+    title: String!
+    price: BigDecimal!
     imageUrl: String
 }
 
 type Shipment {
-    status: String
+    status: String!
 }
 
 type Mutation {
     createOrder(order: OrderInput): Order
 }
 input OrderInput {
-    totalPrice: String
     orderItems: [OrderItemInput]
 }
 input OrderItemInput {
-    productId: Long
+    quantity: Int
+    productId: String
 }

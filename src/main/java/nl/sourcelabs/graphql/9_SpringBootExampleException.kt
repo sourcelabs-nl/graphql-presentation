@@ -20,7 +20,7 @@ open class SpringBootExampleException {
 
     @Bean
     open fun mutationResolver() = object : GraphQLMutationResolver {
-        fun createOrder(order: OrderInput): Order? = Order(totalPrice = order.totalPrice)
+        fun createOrder(order: OrderInput): Order? = Order(totalPrice = order.orderItems.totalPrice)
     }
 
     // Graphql servlet filters all the DataFetching exception, during development this can be annoying.
