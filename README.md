@@ -8,11 +8,24 @@ Code samples:
 
 * https://github.com/sourcelabs-nl/graphql-presentation/tree/master/src/main/java/nl/sourcelabs/graphql
 
-## Running the Spring boot example
+## Running the Spring Boot demo application
 
-Open the file: 8_SpringBootExample.kt and run the main function.
+Clone this git repository on your local machine. And run the application using the Spring Boot Maven plugin.
 
-* Browse to: http://localhost:8080/graphiql
+On Mac/Unix
+
+```bash
+./mvnw spring-boot:run
+```
+
+On Windows
+
+```bash
+mvnw spring-boot:run
+```
+Once it is started, browse to: http://localhost:8080/graphiql
+
+### Query
 
 Now you can try to query the model (control+space will help you). An example query to retrieve all orders:
 
@@ -22,6 +35,7 @@ query {
     id
     totalPrice
     orderItems {
+      quantity
       product {
         title
         price
@@ -33,8 +47,8 @@ query {
     }
   }
 }
-
 ```
+### Mutation
 
 You can place an order by executing the following mutation query:
 
@@ -44,9 +58,11 @@ mutation CreateOrder($order: OrderInput) {
     id
     totalPrice
     orderItems {
+      quantity
       product {
-        price
         title
+        price
+        imageUrl
       }
     }
   }
@@ -72,6 +88,8 @@ Using this query variable:
 }
 ```
 
-If you have any questions, send a mail to: info@sourcelabs.nl
+## Questions?
+
+If you have any questions or maybe you want to request a presentation or workshop, then please send a mail to: info@sourcelabs.nl
 
 

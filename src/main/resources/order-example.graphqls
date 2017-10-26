@@ -22,7 +22,6 @@ type Order {
     totalPrice: BigDecimal!
     # Order consists of 1 or many lines. Each line represents a product that is bought by the customer
     orderItems: [OrderItem]!
-
 }
 
 type OrderItem {
@@ -43,12 +42,16 @@ type Shipment {
 }
 
 type Mutation {
-    createOrder(order: OrderInput): Order
+    # Creates a new order, the order input is mandatory
+    createOrder(order: OrderInput): Order!
 }
+
 input OrderInput {
-    orderItems: [OrderItemInput]
+    # Order items that need to be created
+    orderItems: [OrderItemInput]!
 }
+
 input OrderItemInput {
-    quantity: Int
-    productId: String
+    quantity: Int!
+    productId: String!
 }

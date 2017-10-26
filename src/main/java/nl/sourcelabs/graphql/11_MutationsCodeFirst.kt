@@ -50,7 +50,7 @@ fun main(args: Array<String>) {
                     // like any field a mutation is also bound to a dataFetcher
                     .dataFetcher { env ->
                         val totalPrice = env.getArgument<Double>("totalPrice")
-                        val order = nl.sourcelabs.graphql.Order(totalPrice = totalPrice.bd)
+                        val order = nl.sourcelabs.graphql.Order(totalPrice = totalPrice.bd, orderItems = listOf(OrderItem(quantity = 1, productId = "123")))
                         // Stores the order and returns with generated id
                         nl.sourcelabs.graphql.OrderRepository.addOrder(order)
                     }

@@ -13,7 +13,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.7.RELEASE</version>
-        <relativePath />
+        <relativePath/>
     </parent>
 
     <properties>
@@ -24,6 +24,7 @@
         <graphql-java-tools.version>4.1.2</graphql-java-tools.version>
         <graphql-spqr.version>0.9.3</graphql-spqr.version>
         <graphql-spring-boot.version>3.9.2</graphql-spring-boot.version>
+        <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -36,11 +37,6 @@
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java-annotations</artifactId>
             <version>${graphql-java-annotations.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-java-tools</artifactId>
-            <version>${graphql-java-tools.version}</version>
         </dependency>
         <dependency>
             <groupId>com.graphql-java</groupId>
@@ -112,6 +108,14 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>nl.sourcelabs.graphql.SpringBootExample</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
@@ -125,5 +129,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
