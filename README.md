@@ -48,6 +48,32 @@ query {
   }
 }
 ```
+
+### Query with errors element in the response
+
+To generate a response that includes an errors element you can include the exception field inside orderItems. This demonstrates that the order information is returned but the OrderItem field names exception is null.
+
+```graphql
+query {
+  orders {
+    id
+    totalPrice
+    orderItems {
+      exception
+      quantity
+      product {
+        title
+        price
+        imageUrl
+      }
+      shipment {
+        status
+      }      
+    }
+  }
+}
+```
+
 ### Mutation
 
 You can place an order by executing the following mutation query:
