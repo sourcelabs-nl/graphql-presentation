@@ -15,7 +15,9 @@ data class Order(val id: Long? = null, val totalPrice: BigDecimal, val orderItem
 /**
  * Input types
  */
-data class OrderInput(val orderItems: List<OrderItemInput>)
+data class OrderInput(val orderItems: List<OrderItemInput>) {
+    fun toOrder() = Order(totalPrice = this.orderItems.totalPrice, orderItems = this.orderItems.map { it.toOrderItem() })
+}
 
 data class OrderItemInput(val quantity: Int, val productId: String) {
     fun toOrderItem() = OrderItem(quantity = this.quantity, productId = this.productId)
