@@ -28,6 +28,9 @@ typealias OrderId = Long
 typealias OrderItemId = Long
 typealias ProductId = String
 
+/**
+ * Dummy Repository implementations to simulate an external service or persistent storage
+ */
 object OrderRepository {
     private val orderIdGenerator = AtomicLong(0)
     private val orderItemIdGenerator = AtomicLong(0)
