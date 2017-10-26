@@ -28,6 +28,8 @@ type OrderItem {
     quantity: Int!
     product: Product!
     shipment: Shipment
+    # When you include this field in the query, it will trigger an exception, for demo purposes only ;-)
+    exception: String
 }
 
 type Product {

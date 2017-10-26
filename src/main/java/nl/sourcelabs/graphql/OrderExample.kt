@@ -7,9 +7,8 @@ import java.util.concurrent.atomic.AtomicLong
  * Return types
  */
 data class Product(var id: String? = null, val title: String, val price: BigDecimal, val imageUrl: String)
-
 data class Shipment(val status: String)
-data class OrderItem(var id: Long? = null, val quantity: Int, var shipment: Shipment? = null, var product: Product? = null, val productId: String)
+data class OrderItem(var id: Long? = null, val quantity: Int, val productId: String, var exception: String? = null, var shipment: Shipment? = null, var product: Product? = null)
 data class Order(val id: Long? = null, val totalPrice: BigDecimal, val orderItems: List<OrderItem>)
 
 /**
@@ -18,13 +17,12 @@ data class Order(val id: Long? = null, val totalPrice: BigDecimal, val orderItem
 data class OrderInput(val orderItems: List<OrderItemInput>) {
     fun toOrder() = Order(totalPrice = this.orderItems.totalPrice, orderItems = this.orderItems.map { it.toOrderItem() })
 }
-
 data class OrderItemInput(val quantity: Int, val productId: String) {
     fun toOrderItem() = OrderItem(quantity = this.quantity, productId = this.productId)
 }
 
 /**
- * Type aliases to make the maps with dummy data a bit more descriptive
+ * Type aliases to make the maps with dummy data more descriptive
  */
 typealias OrderId = Long
 typealias OrderItemId = Long
@@ -54,7 +52,7 @@ object ShipmentRepository {
 }
 
 /**
- * Extension properties to make conversions a bit easier
+ * Extension properties to make conversions easier
  */
 val Double.bd: BigDecimal
     get() = BigDecimal(this)
